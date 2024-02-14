@@ -3,7 +3,7 @@ const fs = require("fs")
 
 // asynchronously  method
 
-fs.open('frist.txt', (err, data) => {
+fs.open('uv.txt', (err, data) => {
     if (err) {
         console.log('faild to open file')
     } else {
@@ -13,5 +13,5 @@ fs.open('frist.txt', (err, data) => {
 
 // synchronously method
 
-// fs.openSync('frist.txt')
+// fs.openSync('uv.txt')
 // console.log('file open sucessfully')
