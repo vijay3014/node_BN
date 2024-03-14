@@ -1,11 +1,13 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
-const port = 8472;
+const port = process.env.PORT;
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 
 async function main(){
-    await mongoose.connect('mongodb://127.0.0.1:27017/vijay');
+    // await mongoose.connect('mongodb://127.0.0.1:27017/vijay');
+    await mongoose.connect(process.env.ONDATABASE);
 };
 
 main()
@@ -21,5 +23,5 @@ const ProjectRoutes = require('./routers/project.routes');
 app.use('/Project',ProjectRoutes)
 
 app.listen(port,() => {
-    console.log(`Server Start At http://localhost:8472`);
+    console.log(`Server Start At http://localhost:${port}`);
 });
